@@ -14,6 +14,6 @@ if [! -f config.toml ]; then
     echo "Warning: config.toml not found. Please create one from the sample."
 fi
 
-sudo podman run --rm -v $(pwd)/output:/output -v $(pwd)/config.toml:/config.toml bootc-builder
+sudo podman run --rm -v $(pwd)/output:/output -v $(pwd)/config.toml:/config.toml bootc-builder $1
 
 
