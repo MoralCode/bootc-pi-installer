@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# if $1 isnt present, exit wiht an error
+if [ -z "$1" ]; then
+    echo "Error: No image provided to build. expected url to a bootc image in a container registry, such as quay.io/fedora/fedora-bootc:40."
+    exit 1
+fi
+
 sudo podman build -t bootc-builder .
 
 mkdir output
