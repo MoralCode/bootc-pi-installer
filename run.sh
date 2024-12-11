@@ -8,9 +8,9 @@ fi
 
 sudo podman build -t bootc-builder .
 
-mkdir output
+mkdir -p output
 # check if config.toml exists and warn if it doesn't
-if [! -f config.toml ]; then
+if [ ! -f config.toml ]; then
     echo "Warning: config.toml not found. Please create one from the sample."
 fi
 
