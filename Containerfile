@@ -7,4 +7,6 @@ RUN dnf -y install git podman qemu-user-static && dnf clean all
 
 COPY build.sh /build.sh
 
+USER root
+
 ENTRYPOINT ["/build.sh"]
