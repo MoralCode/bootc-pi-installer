@@ -6,6 +6,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+mkdir -p output
+
 podman build -t bootc-builder .
 
 mkdir -p output
