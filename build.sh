@@ -13,4 +13,4 @@ podman pull --arch arm64 "$1"
 # sudo podman build --platform linux/arm64 -t "$1" .
 
 # --partition-table-variant rpi is custom and likely wont be merged into upstream bib
-podman run --rm -it --privileged --pull=newer --security-opt label=type:unconfined_t -v /config.toml:/config.toml:ro -v /output:/output -v /var/lib/containers/storage:/var/lib/containers/storage ghcr.io/moralcode/bootc-image-builder:tutorial --type raw --target-arch aarch64 --rootfs ext4 --partition-table-variant rpi --local "$1"
+podman run --rm -it --privileged --pull=newer --security-opt label=type:unconfined_t -v ./config.toml:/config.toml:ro -v ./output:/output -v /var/lib/containers/storage:/var/lib/containers/storage ghcr.io/moralcode/bootc-image-builder:tutorial --type raw --target-arch aarch64 --rootfs ext4 --partition-table-variant rpi --local "$1"
